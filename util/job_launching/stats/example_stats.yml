@@ -26,6 +26,18 @@ collect_aggregate:
     - 'kernel_launch_uid\s*=\s*(.*)'
     - 'gpgpu_n_shmem_bkconflict\s*=\s*(.*)'
     - 'gpgpu_n_l1cache_bkconflict\s*=\s*(.*)'
+    - 'icc_flits_saved\s*=\s*(.*)'
+    # NoC packet counts (primary ICC metric)
+    - 'icnt_total_pkts_simt_to_mem\s*=\s*(.*)'
+    - 'icnt_total_pkts_mem_to_simt\s*=\s*(.*)'
+    # NoC stall cycles
+    - 'gpu_stall_icnt2sh\s*=\s*(.*)'
+    - 'gpu_stall_dramfull\s*=\s*(.*)'
+    # Traffic breakdown: bytes injected into NoC per access type
+    - 'traffic_breakdown_coretomem\[GLOBAL_ACC_R\]\s*=\s*(.*)\s*\{'
+    - 'traffic_breakdown_coretomem\[GLOBAL_ACC_W\]\s*=\s*(.*)\s*\{'
+    - 'traffic_breakdown_memtocore\[GLOBAL_ACC_R\]\s*=\s*(.*)\s*\{'
+
 
 
 # These stats are reset each kernel and should not be diff'd
@@ -34,6 +46,7 @@ collect_abs:
     - 'gpu_ipc\s*=\s*(.*)'
     - 'gpu_occupancy\s*=\s*(.*)%'
     - 'L2_BW\s*=\s*(.*)\s*GB\/Sec'
+    - 'Packet latency average\s*=\s*(.*)'
 
 # These stats are rates that aggregate - but cannot be diff'd
 # Only valid as a snapshot and most useful for the final kernel launch

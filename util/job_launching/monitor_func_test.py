@@ -46,8 +46,8 @@ def kill_all_running_jobs(jobstatus_out_filename):
                     )
                     if subprocess.call(["qdel", torqueID]) != 0:
                         print("WARNING error calling qdel")
-    print("Sleeping 30s to wait for the file system to calm down")
-    time.sleep(30)
+    print("Sleeping 10s to wait for the file system to calm down")
+    time.sleep(10)
     jobstatus_out_file.close()
 
 
@@ -130,8 +130,8 @@ parser.add_option(
     "-S",
     "--sleep_time",
     dest="sleep_time",
-    default="30",
-    help="Time to sleep in (s) - default is 30.",
+    default="10",
+    help="Time to sleep in (s) - default is 10.",
 )
 parser.add_option(
     "-I",
