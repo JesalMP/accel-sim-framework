@@ -61,6 +61,5 @@ $(BUILD_DIR)/trace-driven.Makefile.makedepend: depend
 
 depend:
 	touch $(BUILD_DIR)/trace-driven.Makefile.makedepend
-	makedepend -f$(BUILD_DIR)/trace-driven.Makefile.makedepend -p$(BUILD_DIR)/ $(CSRCS) 2> /dev/null
 
 include $(BUILD_DIR)/trace-driven.Makefile.makedepend

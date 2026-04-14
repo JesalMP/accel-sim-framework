@@ -71,7 +71,6 @@ version:
 
 depend: checkenv makedirs
 	touch $(BUILD_DIR)/main.makedepend
-	makedepend -f$(BUILD_DIR)/main.makedepend -p$(BUILD_DIR)/ main.cc 2> /dev/null
 
 trace-driven: checkenv makedirs
 	$(MAKE) -C trace-driven depend
